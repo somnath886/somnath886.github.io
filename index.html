@@ -21,8 +21,10 @@
       </h1>
       <p style="color: var(--color-ad-1); line-height: 25px">
         As a self-taught software engineer with
-        <strong style="background: var(--color-asd-1)">three</strong> years of
-        professional experience, I've been developing my skills in
+        <strong style="background: var(--color-asd-1)" id="experience-years"
+          >4+</strong>
+        <span id="experience-years-label">years</span> of professional
+        experience, I've been developing my skills in
         <strong style="background: var(--color-asd-1)"
           >frontend and backend programming</strong
         >, primarily with
@@ -643,5 +645,28 @@
         </div>
       </div>
     </div>
+    <script>
+      (function () {
+        /** Career start: August 2021 (day 1). Whole years count from this anniversary. */
+        var careerStart = new Date(2021, 7, 1);
+        var now = new Date();
+        var years = now.getFullYear() - careerStart.getFullYear();
+        var monthDiff = now.getMonth() - careerStart.getMonth();
+        var dayDiff = now.getDate() - careerStart.getDate();
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+          years -= 1;
+        }
+        years = Math.max(0, years);
+
+        var numEl = document.getElementById("experience-years");
+        var labelEl = document.getElementById("experience-years-label");
+        if (numEl) {
+          numEl.textContent = `${String(years)}+`;
+        }
+        if (labelEl) {
+          labelEl.textContent = years === 1 ? "year" : "years";
+        }
+      })();
+    </script>
   </body>
 </html>

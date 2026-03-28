@@ -142,16 +142,15 @@ a {
 .skills_items__container {
   margin-top: 24px;
   margin-left: 36px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
 }
 
-@media  screen and (max-width: 1280px) {
-	.skills_items__container {
-		grid-template-columns: 1fr 1fr;
-	}
-	
+@media screen and (max-width: 1280px) {
+  .skills_items__container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -166,7 +165,7 @@ a {
   .resume_details {
     height: auto;
   }
-	.skills_items__container {
-		grid-template-columns: 1fr;
-	}
+  .skills_items__container {
+    grid-template-columns: 1fr;
+  }
 }
